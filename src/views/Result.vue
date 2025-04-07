@@ -51,7 +51,7 @@ const again = () => {
             />
             <div class="text-center sm:text-left mt-2 sm:mt-0">
               <div class="text-lg font-semibold text-gray-800">{{ item.name }}</div>
-              <div class="text-sm text-gray-500">スコア：{{ item.score }}</div>
+              <!-- <div class="text-sm text-gray-500">スコア：{{ item.score }}</div> -->
             </div>
           </div>
         </transition>
