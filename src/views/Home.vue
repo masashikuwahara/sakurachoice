@@ -16,7 +16,7 @@ const startComparison = () => {
 };
 
 const histories = ref([
-  { date: '2025.04.08', content: 'ベータ版' },
+  { date: '2025.04.10', content: 'ベータ2版' },
   { date: '2025.04.08', content: 'ベータ版' }
 ])
 </script>
