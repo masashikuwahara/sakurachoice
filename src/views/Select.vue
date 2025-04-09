@@ -1,6 +1,7 @@
 <script setup>
 import { useRouter } from "vue-router";
 import { useItemStore } from "@/stores/items";
+import { computed } from 'vue';
 
 const router = useRouter();
 const itemStore = useItemStore();
@@ -11,11 +12,26 @@ const selectWinner = (winnerId) => {
     router.push("/result");
   }
 };
+
+// 進捗を計算
+const progress = computed(() => {
+  // 試合が進行中であれば、進捗を試合数に基づいて計算
+  const progressPercentage = (itemStore.matchCount / itemStore.maxMatches) * 170;
+  // 進捗が100%を超えないように制限
+  return Math.min(progressPercentage, 100);
+})
 </script>
 
 <template>
   <transition name="fade" appear>
     <div class="min-h-screen flex flex-col justify-center items-center bg-white p-4">
+    <!-- 進捗バー -->
+    <div class="progress-bar">
+      <div 
+        class="progress" 
+        :style="{ width: progress + '%' }">
+      </div>
+    </div>
       <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 text-center">
         どっち？
       </h1>
@@ -63,7 +79,7 @@ const selectWinner = (winnerId) => {
   </transition>
 </template>
 
-<style>
+<style scoped>
 .fade-enter-active {
   transition: opacity 1.9s ease, transform 1.9s ease;
 }
@@ -74,5 +90,18 @@ const selectWinner = (winnerId) => {
 .fade-enter-to {
   opacity: 1;
   transform: translateY(0);
+}
+.progress-bar {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  width: 100%;
+  height: 10px;
+  margin-bottom: 20px;
+}
+
+.progress {
+  background-color: #4caf50;
+  height: 100%;
+  border-radius: 10px;
 }
 </style>
