@@ -16,6 +16,7 @@ const startComparison = () => {
 };
 
 const histories = ref([
+  { date: '2025.04.08', content: 'ベータ版' },
   { date: '2025.04.08', content: 'ベータ版' }
 ])
 </script>
@@ -37,6 +38,6 @@ const histories = ref([
     <div v-for="history in histories">
       {{ history.date }} {{ history.content }}
     </div>
-    1.0.0-beta.1
+    1.0.0-beta.2
   </div>
 </template>
