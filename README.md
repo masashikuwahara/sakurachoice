@@ -27,13 +27,13 @@
 
 2. 依存パッケージをインストールします。
 
-  ```bash
-  npm install
+   ```bash
+   npm install
 
 3. 開発サーバーを起動します。
 
-  ```bash
-  npm run dev
+   ```bash
+   npm run dev
 
 ## 使用方法
 
