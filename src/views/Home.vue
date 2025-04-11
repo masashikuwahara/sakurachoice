@@ -38,6 +38,6 @@ const histories = ref([
     <div v-for="history in histories">
       {{ history.date }} {{ history.content }}
     </div>
-    1.0.0-beta.2
+    1.0.1-beta.2
   </div>
 </template>

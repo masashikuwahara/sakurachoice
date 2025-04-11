@@ -25,6 +25,7 @@ const progress = computed(() => {
 <template>
   <transition name="fade" appear>
     <div class="min-h-screen flex flex-col justify-center items-center bg-white p-4">
+      進捗状況
     <!-- 進捗バー -->
     <div class="progress-bar">
       <div 
