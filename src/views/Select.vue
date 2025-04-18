@@ -8,7 +8,7 @@ const itemStore = useItemStore();
 
 const selectWinner = (winnerId) => {
   itemStore.registerWin(winnerId);
-  if (itemStore.matchCount >= 30) { // 試合数
+  if (itemStore.matchCount >= itemStore.maxMatches) { // 試合数
     router.push("/result");
   }
 };
@@ -16,7 +16,7 @@ const selectWinner = (winnerId) => {
 // 進捗を計算
 const progress = computed(() => {
   // 試合が進行中であれば、進捗を試合数に基づいて計算
-  const progressPercentage = (itemStore.matchCount / itemStore.maxMatches) * 170;
+  const progressPercentage = (itemStore.matchCount / itemStore.maxMatches) * 100;
   // 進捗が100%を超えないように制限
   return Math.min(progressPercentage, 100);
 })
