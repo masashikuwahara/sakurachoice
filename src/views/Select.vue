@@ -25,14 +25,17 @@ const progress = computed(() => {
 <template>
   <transition name="fade" appear>
     <div class="min-h-screen flex flex-col justify-center items-center bg-white p-4">
-      進捗状況
-    <!-- 進捗バー -->
-    <div class="progress-bar">
-      <div 
-        class="progress" 
-        :style="{ width: progress + '%' }">
+      <p>進捗状況</p>
+      <div class="w-full max-w-md mx-auto my-6">
+        <div class="relative w-full h-6 bg-gray-300 rounded-full overflow-hidden">
+          <div class="absolute top-0 left-0 h-full bg-green-500 transition-all duration-300"
+          :style="{ width: `${progress}%` }">
+          </div>
+          <div class="absolute inset-0 flex items-center justify-center text-sm font-semibold text-white">
+            {{ Math.floor(progress) }}%
+          </div>
+        </div>
       </div>
-    </div>
       <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 text-center">
         どっち？
       </h1>
