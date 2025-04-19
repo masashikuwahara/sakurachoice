@@ -15,7 +15,7 @@
     <div v-for="history in histories">
       {{ history.date }} {{ history.content }}
     </div>
-    1.0.0-rc1
+    1.0.0
   </div>
 </template>
 
@@ -37,8 +37,6 @@ const startComparison = () => {
 };
 
 const histories = ref([
-  { date: '2025.04.19', content: 'RC版' },
-  { date: '2025.04.10', content: 'ベータ2版' },
-  { date: '2025.04.08', content: 'ベータ版' }
+  { date: '2025.04.19', content: 'リリースしました' }
 ])
 </script>
