@@ -28,11 +28,13 @@ export const useItemStore = defineStore("itemStore", {
       this.matchCount = 0;
       this.history = []; // 過去の試合履歴をリセット
 
-      this.maxMatches = Math.floor(Math.log2(this.items.length) * 11); // 試合回数を計算
+      // this.maxMatches = Math.floor(Math.log2(this.items.length) * 11); // 試合回数を計算
+      this.maxMatches = Math.floor(Math.log2(this.items.length) * 5); // 試合回数を計算
       this.nextMatch();
     },
     nextMatch() {
-      if (this.matchCount >= Math.floor(Math.log2(this.items.length) * 11)) return;
+      // if (this.matchCount >= Math.floor(Math.log2(this.items.length) * 11)) return;
+      if (this.matchCount >= Math.floor(Math.log2(this.items.length) * 5)) return;
       const availablePairs = [];
       // すべてのアイテムの組み合わせを作る
       for (let i = 0; i < this.results.length; i++) { 
