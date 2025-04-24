@@ -3,7 +3,7 @@
     <h1 class="text-3xl sm:text-5xl font-bold text-gray-800 mb-8 text-center">
       SAKURACHOICE
     </h1>
-    <P>櫻坂46の推しメンチェッカーです</P>
+    <P>櫻坂46四期生の推しメンチェッカーです</P>
     <!-- <img src="https://www.crank-in.net/img/db/243113240232456_1200.jpg" alt="" class="hinata"><br> -->
     <button
       @click="startComparison"
@@ -15,7 +15,7 @@
     <div v-for="history in histories">
       {{ history.date }} {{ history.content }}
     </div>
-    1.0.0
+    1.0.1
   </div>
 </template>
 
@@ -37,6 +37,7 @@ const startComparison = () => {
 };
 
 const histories = ref([
+  { date: '2025.04.25', content: '四期生を追加しました' },
   { date: '2025.04.19', content: 'リリースしました' }
 ])
 </script>
